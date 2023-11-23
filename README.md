@@ -10,4 +10,10 @@ cy.get('button').then(($btn) => {
     const cls = $btn.attr('class')
     //..
 })
-if undefnied return from the cypress callback function (subject/command) the subject will not be modifed and will instead carry over to the next command. as cypress is async any .then() command will wait for each .then() to be resolved before continuing through its chain of commands. if we want to make an assertion (test check) on a specific DOM element (button, h3 etc) we need to wrap it first (to make the object assertable by cypress) by using the .wrap() command. 
+## general tips: 
+* if undefnied return from the cypress callback function (subject/command) the subject will not be modifed and will instead carry over to the next command. as cypress is async any .then() command will wait for each .then() to be resolved before continuing through its chain of commands. if we want to make an assertion (test check) on a specific DOM element (button, h3 etc) we need to wrap it first (to make the object assertable by cypress) by using the .wrap() command. we getting elements in cypress using .get() command and passing css selector inside the paranthesis of .get, we can chain to the .get() assertiosts which are built in cypress from chai and other testing libraries so no need to install / import testing libraries, just use their syntax in the chaining after grabbing DOM elements.
+* can configure baseUrl in the cypress.config.js file in the root directory and then just cy.visit the slug of the url.
+* can use beforeEach to visit a specific url or anything you want to run before each test
+* can add custom commands to the built in ones (cy.get etc) in cypress>support>commands.js with similar syntax as using the built in commmands (check that file for my custom cimmand example)
+* .as() function to use alias instead of REPEATING a whole line again and again, you must use the as alias with the .get and @ sign when referncing it
+## best practices:

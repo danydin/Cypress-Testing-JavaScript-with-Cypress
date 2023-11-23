@@ -37,16 +37,17 @@ export default function FormsPage(){
     const [subMessage, setSubMessage] = useState('')
     return (
         <main className={styles.main}>
-            <h1 className={styles.header}>Testing Forms</h1>
+            <h1 data-test="title" className={styles.header}>Testing Forms</h1>
             <ItemsAccordion items={items} />
             <TextField 
             className={styles.input} 
+            data-test="input-email"
             label="Email" 
             variant="filled" 
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
             />
-            <Button onClick={() => {
+            <Button data-test="submit-button" onClick={() => {
                 if (!inputValue.includes('.com') ){
                     setSubMessage(`Invalid email: ${inputValue}!`)
                 } else if (inputValue.length){
