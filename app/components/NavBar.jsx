@@ -2,32 +2,39 @@ import NavItem from "./NavItem"
 
 const navItems = [
     {
-    label: 'Why Cypress?',
-    path: '/',
+        label: 'Why Cypress?',
+        path: '/',
+        dataTest: 'why-cypress-page'
     },
     {
-    label: 'Overview',
-    path: '/overview'
+        label: 'Overview',
+        path: '/overview',
+        dataTest: 'overview-page'
     },
     {
-    label: 'Fundamentals',
-    path: '/fundamentals'
+        label: 'Fundamentals',
+        path: '/fundamentals',
+        dataTest: 'fundamentals-page',
     },
     {
         label: 'Forms',
-        path: '/forms'
+        path: '/forms',
+        dataTest: 'forms-page',
     },
     {
         label: 'Examples',
-        path: '/examples' 
+        path: '/examples',
+        dataTest: 'examples-page',
     },
     {
         label: 'Component',
-        path: '/component' 
+        path: '/component',
+        dataTest: 'component-page'
     },
     {
         label: 'Best Practices',
-        path: '/best-practices'
+        path: '/best-practices',
+        dataTest: 'best-practices-page'
     },
 ]
 
@@ -36,7 +43,7 @@ export default function NavBar(){
         <ul className="nav-bar">
             {
                 navItems.map((item)=> (
-                    <NavItem key={item.label} label={item.label} path={item.path} />
+                    <NavItem dataTest={item.dataTest} key={item.label} label={item.label} path={item.path} />
                 ))
             }
         </ul>
