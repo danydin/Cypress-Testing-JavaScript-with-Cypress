@@ -50,7 +50,7 @@ export default function GrudgeList(){
             style={{backgroundColor: 'white'}}
             />
             </div>
-            <Button onClick={addGrudge}>
+            <Button data-test="add-grudge-button" onClick={addGrudge}>
                 Add Grudge
             </Button>
             <ul style={{listStyleType: 'none'}}>
@@ -62,7 +62,7 @@ export default function GrudgeList(){
                                 <span>
                                 {g.text}
                                 </span>
-                                <Button onClick={() => deleteGrudge(g)}>
+                                <Button data-test="delete-one-grudge" onClick={() => deleteGrudge(g)}>
                                     X
                                 </Button> 
                             </li>

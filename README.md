@@ -16,4 +16,6 @@ cy.get('button').then(($btn) => {
 * can use beforeEach to visit a specific url or anything you want to run before each test
 * can add custom commands to the built in ones (cy.get etc) in cypress>support>commands.js with similar syntax as using the built in commmands (check that file for my custom cimmand example)
 * .as() function to use alias instead of REPEATING a whole line again and again, you must use the as alias with the .get and @ sign when referncing it
+
+
 ## best practices:
