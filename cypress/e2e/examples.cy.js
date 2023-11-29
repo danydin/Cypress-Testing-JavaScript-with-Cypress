@@ -24,7 +24,7 @@ describe('examples page', () => {
         })
         cy.getDataTest('examples-post-data-button').click()
     })
-    it.only('test grudge', () => {
+    it('test grudge', () => {
         // check title - Add Some Grudges
         cy.contains(/Add Some Grudges/i)
 
@@ -67,10 +67,9 @@ describe('examples page', () => {
 
         // use the clear-button to remove all items & assert li no exists and title change back to original title
         cy.getDataTest('clear-grudges').click()
-        
+
         cy.getDataTest('grudges-block').within(()=>{
             cy.get('li').should('have.length',0)
         })
-
     })
 })

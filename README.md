@@ -19,3 +19,8 @@ cy.get('button').then(($btn) => {
 
 
 ## best practices:
+1. test inputs that AREN'T EXPECTED, e.g. if u test email input , test also empty input, without .com . numbers only etc etc and make sure proper WARNING APPEARS FOR ALL OF THEM 
+2. use data-* attributes instead of CSS / elements selectors that my change
+3. use cy.request() to talk to 3rd servers (in case you don't run them locally) and if possible use cy.session() to cache the website and avoiding repeats visits 
+4. don't make any tests dependent on another test
+5. don't run small tests as cypress preforms a lot of processing for every test, so try create as big tests as possible in each test
